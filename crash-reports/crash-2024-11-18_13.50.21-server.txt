@@ -1,0 +1,209 @@
+---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 2024-11-18 13:50:21
+Description: Loading entity NBT
+
+java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because "value" is null
+	at knot//com.gitlab.srcmc.rctmod.api.service.TrainerSpawner.lambda$notifyChangeTrainerId$5(TrainerSpawner.java:192)
+	at java.base/java.util.HashMap.compute(HashMap.java:1324)
+	at knot//com.gitlab.srcmc.rctmod.api.service.TrainerSpawner.notifyChangeTrainerId(TrainerSpawner.java:192)
+	at knot//com.gitlab.srcmc.rctmod.world.entities.TrainerMob.setTrainerId(TrainerMob.java:254)
+	at knot//com.gitlab.srcmc.rctmod.world.entities.TrainerMob.method_5749(TrainerMob.java:537)
+	at knot//net.minecraft.class_1297.method_5651(class_1297.java:1930)
+	at knot//net.minecraft.class_1299.method_17839(class_1299.java:549)
+	at knot//net.minecraft.class_156.method_17974(class_156.java:513)
+	at knot//net.minecraft.class_1299.method_5892(class_1299.java:548)
+	at knot//tschipp.carryon.common.carry.CarryOnData.getEntity(CarryOnData.java:127)
+	at knot//tschipp.carryon.CarryOnCommon.potionLevel(CarryOnCommon.java:140)
+	at knot//tschipp.carryon.CarryOnCommon.onCarryTick(CarryOnCommon.java:85)
+	at knot//tschipp.carryon.events.CommonEvents.lambda$registerEvents$7(CommonEvents.java:111)
+	at knot//net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.lambda$static$2(ServerTickEvents.java:43)
+	at knot//net.minecraft.server.MinecraftServer.handler$zpb002$fabric-lifecycle-events-v1$onEndTick(MinecraftServer.java:3862)
+	at knot//net.minecraft.server.MinecraftServer.method_3748(MinecraftServer.java:847)
+	at knot//net.minecraft.server.MinecraftServer.method_29741(MinecraftServer.java:671)
+	at knot//net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:265)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at knot//com.gitlab.srcmc.rctmod.api.service.TrainerSpawner.lambda$notifyChangeTrainerId$5(TrainerSpawner.java:192)
+	at java.base/java.util.HashMap.compute(HashMap.java:1324)
+	at knot//com.gitlab.srcmc.rctmod.api.service.TrainerSpawner.notifyChangeTrainerId(TrainerSpawner.java:192)
+	at knot//com.gitlab.srcmc.rctmod.world.entities.TrainerMob.setTrainerId(TrainerMob.java:254)
+	at knot//com.gitlab.srcmc.rctmod.world.entities.TrainerMob.method_5749(TrainerMob.java:537)
+
+-- Entity being loaded --
+Details:
+	Entity Type: rctmod:trainer (com.gitlab.srcmc.rctmod.world.entities.TrainerMob)
+	Entity ID: 229370
+	Entity Name: Leader Erika
+	Entity's Exact location: 1657.10, 114.00, -3062.46
+	Entity's Block location: World: (1657,114,-3063), Section: (at 9,2,9 in 103,7,-192; chunk contains blocks 1648,-64,-3072 to 1663,319,-3057), Region: (3,-6; contains chunks 96,-192 to 127,-161, blocks 1536,-64,-3072 to 2047,319,-2561)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at knot//net.minecraft.class_1297.method_5651(class_1297.java:1930)
+	at knot//net.minecraft.class_1299.method_17839(class_1299.java:549)
+	at knot//net.minecraft.class_156.method_17974(class_156.java:513)
+	at knot//net.minecraft.class_1299.method_5892(class_1299.java:548)
+	at knot//tschipp.carryon.common.carry.CarryOnData.getEntity(CarryOnData.java:127)
+	at knot//tschipp.carryon.CarryOnCommon.potionLevel(CarryOnCommon.java:140)
+	at knot//tschipp.carryon.CarryOnCommon.onCarryTick(CarryOnCommon.java:85)
+	at knot//tschipp.carryon.events.CommonEvents.lambda$registerEvents$7(CommonEvents.java:111)
+	at knot//net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.lambda$static$2(ServerTickEvents.java:43)
+	at knot//net.minecraft.server.MinecraftServer.handler$zpb002$fabric-lifecycle-events-v1$onEndTick(MinecraftServer.java:3862)
+	at knot//net.minecraft.server.MinecraftServer.method_3748(MinecraftServer.java:847)
+	at knot//net.minecraft.server.MinecraftServer.method_29741(MinecraftServer.java:671)
+	at knot//net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:265)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+-- Cobblemon --
+Details:
+	Version: 1.5.2
+	Is Snapshot: false
+	Git Commit: df8f078 (https://gitlab.com/cable-mc/cobblemon/-/commit/df8f078d13702ab9a000438910b822ceffbb2248)
+	Branch: HEAD
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1017-azure
+	Java Version: 21.0.5, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1772251904 bytes (1690 MiB) / 3892314112 bytes (3712 MiB) up to 7516192768 bytes (7168 MiB)
+	CPUs: 2
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz
+	Identifier: Intel64 Family 6 Model 85 Stepping 7
+	Microarchitecture: Cascade Lake
+	Frequency (GHz): 2.60
+	Number of physical packages: 1
+	Number of physical CPUs: 1
+	Number of logical CPUs: 2
+	Graphics card #0 name: hyperv_drmdrmfb
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 3943.96
+	Virtual memory used (MB): 4876.03
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 1 total; -Xmx7G
+	Fabric Mods: 
+		appleskin: AppleSkin 2.5.1+mc1.20
+		architectury: Architectury 9.2.14
+		balm-fabric: Balm 7.3.9
+			kuma_api: KumaAPI 20.1.8
+		beansbackpacks: BeansBackpacks 2.0.2
+		cardinal-components: Cardinal Components API 5.2.2
+			cardinal-components-base: Cardinal Components API (base) 5.2.2
+			cardinal-components-block: Cardinal Components API (blocks) 5.2.2
+			cardinal-components-chunk: Cardinal Components API (chunks) 5.2.2
+			cardinal-components-entity: Cardinal Components API (entities) 5.2.2
+			cardinal-components-item: Cardinal Components API (items) 5.2.2
+			cardinal-components-level: Cardinal Components API (world saves) 5.2.2
+			cardinal-components-scoreboard: Cardinal Components API (scoreboard) 5.2.2
+			cardinal-components-world: Cardinal Components API (worlds) 5.2.2
+		carryon: Carry On 2.1.2.7
+		cloth-config: Cloth Config v11 11.1.118
+			cloth-basic-math: cloth-basic-math 0.6.1
+		clumps: Clumps 12.0.0.4
+		cobbledex: Cobbledex 1.1.0
+		cobblemon: Cobblemon 1.5.2+1.20.1
+		cobblemon-field-moves: Cobblemon Field Moves 1.5-fabric-1.1.1
+		cobblemon_capturexp: Cobblemon Capture EXP 1.5-fabric-1.0.1
+		cobblemon_move_inspector: Cobblemon Move Inspector 1.1.1
+		cobblemonbreakouts: Cobblemon Outbreaks fabric-1.1.4-1.20.1
+		cobblemonridingfabric: Cobblemon Riding Fabric 1.2.5
+		cobblemontrainers: CobblemonTrainers 1.1.11+1.5.2
+			fabric-permissions-api-v0: fabric-permissions-api 0.2-SNAPSHOT
+		cobbreeding: Cobbreeding 1.7.2
+		collective: Collective 7.57
+		expandedstorage: Expanded Storage 10.1.5
+		fabric-api: Fabric API 0.92.1+1.20.1
+			fabric-api-base: Fabric API Base 0.4.31+1802ada577
+			fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.36+1802ada577
+			fabric-biome-api-v1: Fabric Biome API (v1) 13.0.13+1802ada577
+			fabric-block-api-v1: Fabric Block API (v1) 1.0.11+1802ada577
+			fabric-block-view-api-v2: Fabric BlockView API (v2) 1.0.1+1802ada577
+			fabric-command-api-v1: Fabric Command API (v1) 1.2.34+f71b366f77
+			fabric-command-api-v2: Fabric Command API (v2) 2.2.13+1802ada577
+			fabric-commands-v0: Fabric Commands (v0) 0.2.51+df3654b377
+			fabric-containers-v0: Fabric Containers (v0) 0.1.64+df3654b377
+			fabric-content-registries-v0: Fabric Content Registries (v0) 4.0.11+1802ada577
+			fabric-convention-tags-v1: Fabric Convention Tags 1.5.5+1802ada577
+			fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.2.19+1802ada577
+			fabric-data-attachment-api-v1: Fabric Data Attachment API (v1) 1.0.0+de0fd6d177
+			fabric-data-generation-api-v1: Fabric Data Generation API (v1) 12.3.4+1802ada577
+			fabric-dimensions-v1: Fabric Dimensions API (v1) 2.1.54+1802ada577
+			fabric-entity-events-v1: Fabric Entity Events (v1) 1.6.0+1c78457f77
+			fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.6.2+1802ada577
+			fabric-events-lifecycle-v0: Fabric Events Lifecycle (v0) 0.2.63+df3654b377
+			fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.40+1802ada577
+			fabric-item-api-v1: Fabric Item API (v1) 2.1.28+1802ada577
+			fabric-item-group-api-v1: Fabric Item Group API (v1) 4.0.12+1802ada577
+			fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.2.22+1802ada577
+			fabric-loot-api-v2: Fabric Loot API (v2) 1.2.1+1802ada577
+			fabric-loot-tables-v1: Fabric Loot Tables (v1) 1.1.45+9e7660c677
+			fabric-message-api-v1: Fabric Message API (v1) 5.1.9+1802ada577
+			fabric-mining-level-api-v1: Fabric Mining Level API (v1) 2.1.50+1802ada577
+			fabric-networking-api-v1: Fabric Networking API (v1) 1.3.11+1802ada577
+			fabric-networking-v0: Fabric Networking (v0) 0.3.51+df3654b377
+			fabric-object-builder-api-v1: Fabric Object Builder API (v1) 11.1.3+1802ada577
+			fabric-particles-v1: Fabric Particles (v1) 1.1.2+1802ada577
+			fabric-recipe-api-v1: Fabric Recipe API (v1) 1.0.21+1802ada577
+			fabric-registry-sync-v0: Fabric Registry Sync (v0) 2.3.3+1802ada577
+			fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.37+92a0d36777
+			fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.0.28+1802ada577
+			fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 2.3.8+1802ada577
+			fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.11.10+1802ada577
+			fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.3.30+1802ada577
+			fabric-transfer-api-v1: Fabric Transfer API (v1) 3.3.5+8dd72ea377
+			fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 4.3.1+1802ada577
+		fabric-language-kotlin: Fabric Language Kotlin 1.10.20+kotlin.1.9.24
+			org_jetbrains_kotlin_kotlin-reflect: kotlin-reflect 1.9.24
+			org_jetbrains_kotlin_kotlin-stdlib: kotlin-stdlib 1.9.24
+			org_jetbrains_kotlin_kotlin-stdlib-jdk7: kotlin-stdlib-jdk7 1.9.24
+			org_jetbrains_kotlin_kotlin-stdlib-jdk8: kotlin-stdlib-jdk8 1.9.24
+			org_jetbrains_kotlinx_atomicfu-jvm: atomicfu-jvm 0.24.0
+			org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm: kotlinx-coroutines-core-jvm 1.8.0
+			org_jetbrains_kotlinx_kotlinx-coroutines-jdk8: kotlinx-coroutines-jdk8 1.8.0
+			org_jetbrains_kotlinx_kotlinx-datetime-jvm: kotlinx-datetime-jvm 0.5.0
+			org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm: kotlinx-serialization-cbor-jvm 1.6.3
+			org_jetbrains_kotlinx_kotlinx-serialization-core-jvm: kotlinx-serialization-core-jvm 1.6.3
+			org_jetbrains_kotlinx_kotlinx-serialization-json-jvm: kotlinx-serialization-json-jvm 1.6.3
+		fabricloader: Fabric Loader 0.16.9
+			mixinextras: MixinExtras 0.4.1
+		fallingtree: FallingTree 4.3.4
+		fightorflight: Cobblemon Fight or Flight Fabric 0.5.0
+		forgeconfigapiport: Forge Config API Port 8.0.0
+		java: OpenJDK 64-Bit Server VM 21
+		livelier-pokemon: LivelierPokemon 1.0.2
+		lootballs: Cobblemon Loot Balls 1.1.4
+		minecraft: Minecraft 1.20.1
+		owo: oωo 0.11.2+1.20
+			blue_endless_jankson: jankson 1.2.2
+		rctmod: Radical Cobblemon Trainers 0.12.0-beta
+		simpletms: Cobblemon: Simple TM's 1.1.2
+		terralith: Terralith 2.5.4
+		travelersbackpack: Traveler's Backpack 9.1.18
+			reach-entity-attributes: Reach Entity Attributes 2.4.0
+		waystones: Waystones 14.1.6
+		xaerominimap: Xaero's Minimap 24.1.1
+		xaeroworldmap: Xaero's World Map 1.38.4
+	Server Running: true
+	Player Count: 2 / 20; [class_3222['Sowrathel'/207571, l='ServerLevel[CobbleWorld]', x=1658.02, y=114.00, z=-3060.87], class_3222['Wasuli'/213882, l='ServerLevel[CobbleWorld]', x=1659.01, y=112.00, z=-3088.02]]
+	Data Packs: vanilla, fabric, file/CobbleTowns v1.0.2.zip
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	Is Modded: Definitely; Server brand changed to 'fabric'
+	Type: Dedicated Server (map_server.txt)
